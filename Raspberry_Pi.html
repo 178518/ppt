@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>树莓派之旅</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>树莓派之旅</h1>
+            <h3>Raspberry Pi</h3>
+            <p>
+                <small>
+                    云易 / 178518@gmail.com
+                </small>
+                <br>
+                <small>
+                    2016-07-05
+                </small>
+            </p>
+        </section>
+
+        <section>
+            <h2>目录</h2>
+            <p>树莓派介绍</p>
+            <p class="fragment">玩派的必备技能和工具</p>
+            <p class="fragment">派的入门</p>
+            <p class="fragment">派的进阶</p>
+            <p class="fragment">派的智能家居</p>
+        </section>
+
+        <!-- Example of nested vertical slides -->
+        <section>
+            <section>
+                <h2>树莓派是什么?</h2>
+                <p class="fragment">一台卡片式电脑,其系统基于Linux</p>
+                <p class="fragment">基于ARM,以SD/MicroSD卡为内存硬盘,具备所有PC的基本功能</p>
+                <p class="fragment"><img width="400" height="322" data-src="https://52pi.cc/book/assets/raspbian/interface.jpg"></p>
+            </section>
+            <section>
+                <h2>树莓派参数</h2>
+                <p class="fragment"><img width="700" height="533" data-src="https://52pi.cc/book/assets/raspbian/version.png"></p>
+            </section>
+            <section>
+                <h2>Raspberry Pi 上的接口</h2>
+                <p class="fragment"><img width="600" height="500" data-src="https://52pi.cc/book/assets/raspbian/extends.jpg"></p>
+            </section>
+            <section>
+                <h2>开发板介绍</h2>
+                <p class="fragment">FireFly RK3288 开发板(RMB 799)</p>
+                <p class="fragment">NVIDIA嵌入平台Jetson TX1(RMB 5000)</p>
+            </section>
+            <section>
+                <h2>树莓派介绍</h2>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/IwsaWDad6TY" frameborder="0" allowfullscreen></iframe>
+            </section>
+        </section>
+
+        <section>
+            <h2>玩派的必备技能和工具</h2>
+            <p class="fragment">烧录系统,备份系统</p>
+            <p class="fragment">Linux的常用命令,推荐鸟哥的Linux私房菜</p>
+            <p class="fragment">路由/域名解析/端口映射/安全等知识</p>
+            <p class="fragment">SSH终端</p>
+        </section>
+
+        <section>
+            <section>
+                <h2>派的入门</h2>
+                <p class="fragment">派的基础配置</p>
+                <p class="fragment">LNAMP环境搭建</p>
+                <p class="fragment">Aria2下载机搭建</p>
+                <p class="fragment">Samba服务搭建</p>
+                <p class="fragment">Web服务搭建</p>
+            </section>
+            <section>
+                <h2>派的基础配置</h2>
+                <p class="fragment">树莓派登录</p>
+                <p class="fragment">源更改/更新软件</p>
+                <p class="fragment">raspi-config配置树莓派</p>
+                <p class="fragment">无线网卡配置</p>
+            </section>
+            <section>
+                <h2>LNAMP环境搭建</h2>
+                <p class="fragment">万能的sudo apt-get install</p>
+                <p class="fragment">编译Tengine</p>
+                <p class="fragment">二进制文件的部署安装Node</p>
+                <p class="fragment"><img width="770" height="350" data-src="https://52pi.cc/book/assets/node/keymetrics.png"></p>
+            </section>
+            <section>
+                <h2>Aria2下载机搭建</h2>
+                <p class="fragment">万能的sudo apt-get install</p>
+                <p class="fragment"><img width="770" height="350" data-src="./images/aria2.png"></p>
+            </section>
+            <section>
+                <h2>Samba服务搭建</h2>
+                <p class="fragment">sudo apt-get install samba samba-common-bin</p>
+                <p class="fragment">配置挂载目录和权限</p>
+                <p class="fragment">配置开机自动访问</p>
+                <p class="fragment">Aria2自动下载到Samba目录实现共享</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>派的进阶</h2>
+                <p class="fragment">Keeplive配置</p>
+                <p class="fragment">LB负载均衡配置</p>
+                <p class="fragment">NFS共享挂载</p>
+                <p class="fragment">Docker搭建</p>
+                <p class="fragment">树莓派集群搭建</p>
+            </section>
+            <section>
+                <img width="800" height="600" src="images/jiagou.png">
+            </section>
+            <section>
+                <h2>树莓派集群搭建</h2>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/i_r3z1jYHAc" frameborder="0" allowfullscreen></iframe>            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>派的智能家居</h2>
+                <p class="fragment">GPIO环境配置</p>
+                <p class="fragment">树莓派控制电灯开关</p>
+                <p class="fragment">树莓派应用</p>
+            </section>
+            <section>
+                <h2>GPIO环境配置</h2>
+                <img width="800" height="600" src="https://52pi.cc/book/assets/gpio/gpio.png">
+            </section>
+            <section>
+                <h2>树莓派控制电灯开关</h2>
+                <p class="fragment">杜邦线/继电器/电灯/铜线若干</p>
+                <p class="fragment">常开端的接线方法</p>
+                <p class="fragment">常闭端的接线方法</p>
+                <p class="fragment">电路图</p>
+                <p class="fragment">效果图</p>
+            </section>
+            <section>
+                <h2>常开端的接线方法</h2>
+                <img width="800" height="600" src="https://img.alicdn.com/imgextra/i4/738263294/TB2Cx8RfXXXXXcNXpXXXXXXXXXX_!!738263294.jpg">
+            </section>
+            <section>
+                <h2>常闭端的接线方法</h2>
+                <img width="800" height="600" src="https://img.alicdn.com/imgextra/i4/738263294/TB2Cx8RfXXXXXcNXpXXXXXXXXXX_!!738263294.jpg">
+            </section>
+            <section>
+                <h2>电路图</h2>
+                <img src="images/rEnquqr.jpg">
+            </section>
+            <section>
+                <h2>效果图</h2>
+                <img width="800" height="600" src="https://52pi.cc/book/assets/gpio/20160409_094027.jpg">
+            </section>
+            <section>
+                <h2>树莓派应用</h2>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/URzivDpsf44" frameborder="0" allowfullscreen></iframe>            </section>
+            <section>
+                <h2>树莓派应用</h2>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/p4vw3taOVyM" frameborder="0" allowfullscreen></iframe>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>

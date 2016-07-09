@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>面向C端的组件化之路</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>面向C端的组件化之路</h1>
+            <h3>VUE Component</h3>
+            <p>
+                <small>
+                    云易 / 178518@gmail.com
+                </small>
+                <br>
+                <small>
+                    2016-07-08
+                </small>
+            </p>
+        </section>
+
+        <section>
+            <h2>目录</h2>
+            <p>面临现状</p>
+            <p class="fragment">玩派的必备技能和工具</p>
+            <p class="fragment">派的入门</p>
+            <p class="fragment">派的进阶</p>
+            <p class="fragment">派的智能家居</p>
+        </section>
+
+        <section>
+            <section>
+                <h2>面临现状</h2>
+                <p class="fragment">业务推动UI不断变化,但是UI又遵循复用,扩充原则</p>
+                <p class="fragment">前端没有统一的数据模型,使得View层面的模板无法复用</p>
+                <p class="fragment">在协作配合的时候前端往往会成为资源瓶颈</p>
+            </section>
+            <section>
+                <h2>试用一期</h2>
+                <p class="fragment"><img width="774" height="581" data-src="http://gtms02.alicdn.com/tps/i2/TB1wUREJXXXXXbBaXXXH3beFXXX-1024-768.jpg"></p>
+            </section>
+            <section>
+                <h2>协作模式(以前)</h2>
+                <p class="fragment"><img width="774" height="581" data-src="http://gtms02.alicdn.com/tps/i2/TB1wUREJXXXXXbBaXXXH3beFXXX-1024-768.jpg"></p>
+            </section>
+            <section>
+                <h2>协作模式(现在)</h2>
+                <p class="fragment"><img width="774" height="581" data-src="https://img.alicdn.com/tps/TB108X8JXXXXXa1XpXXXXXXXXXX-1024-768.jpg"></p>
+            </section>
+            <section>
+                <h2>开发板介绍</h2>
+                <p class="fragment">FireFly RK3288 开发板(RMB 799)</p>
+                <p class="fragment">NVIDIA嵌入平台Jetson TX1(RMB 5000)</p>
+            </section>
+            <section>
+                <h2>树莓派介绍</h2>
+                <iframe width="800" height="600" src="https://www.youtube.com/embed/IwsaWDad6TY" frameborder="0" allowfullscreen></iframe>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
