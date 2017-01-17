@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lego前端框架之路</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Lego前端框架之路</h1>
+            <p>
+                <small>
+                    云易 / 178518@gmail.com
+                </small>
+                <br>
+                <small>
+                    2017-01-10
+                </small>
+            </p>
+        </section>
+
+        <section>
+            <h2>目录</h2>
+            <p class="fragment">为什么要用框架</p>
+            <p class="fragment">AE无线前端现状</p>
+            <p class="fragment">前端框架技术选型</p>
+            <p class="fragment">Lego前端技术架构</p>
+            <p class="fragment">Lego前端组件架构</p>
+            <p class="fragment">debug调试</p>
+            <p class="fragment">Q&A</p>
+        </section>
+
+        <section>
+            <section>
+                <h2>为什么要用框架</h2>
+                <p class="fragment">分层设计</p>
+                <p class="fragment">高内聚、低耦合</p>
+                <p class="fragment">重用</p>
+            </section>
+            <section>
+                <h2>MVC</h2>
+                <p class="fragment">
+                    <img src="images/fe33d4eb3615ba8ecd89dc90681e5284.gif">
+                </p>
+            </section>
+            <section>
+                <h2>MVC</h2>
+                <p class="fragment">
+                    表现层(UI)
+                    <p class="fragment" style="font-size: 20px">通俗讲就是展现给用户的界面，即用户在使用一个系统的时候他的所见所得。</p>
+                </p>
+                <p class="fragment">
+                    业务逻辑层(BLL)
+                    <p class="fragment" style="font-size: 20px">针对具体问题的操作，也可以说是对数据层的操作，对数据业务逻辑处理。</p>
+                </p>
+                <p class="fragment">
+                    数据访问层(DAL)
+                    <p class="fragment" style="font-size: 20px">该层所做事务直接操作数据库，针对数据的增添、删除、修改、查找等。</p>
+                </p>
+            </section>
+            <section>
+                <h2>重用</h2>
+                <p class="fragment">
+                    内部重用
+                    <p class="fragment" style="font-size: 20px">公共使用的抽象块</p>
+                </p>
+                <p class="fragment">
+                    代码重用
+                    <p class="fragment" style="font-size: 20px">通用模块组合成库或工具集</p>
+                </p>
+                <p class="fragment">
+                    业务重用
+                    <p class="fragment" style="font-size: 28px;color: red">专用领域提供通用的解决方案，以获得更高级别的重用性</p>
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>AE无线前端现状</h2>
+                <p class="fragment">1、基础库管理比较松散</p>
+                <p class="fragment">2、分层设计使用偏少，JS更多起到胶水作用将UI、业务逻辑、数据请求操作黏合起来以达到共同协作的目的</p>
+                <p class="fragment">3、模板不纯净，对于layout有入侵</p>
+                <p class="fragment">4、没有统一的DataSource工具，数据访问散列在业务逻辑中</p>
+            </section>
+            <section>
+                <h2>考虑满足以下述求</h2>
+                <p class="fragment">1、满足当下的主流设计风格(暂定Google MD风格)</p>
+                <p class="fragment">2、基于 npm + webpack + babel 的工作流，支持 ES6</p>
+                <p class="fragment">3、基于All In One的思想</p>
+                <p class="fragment">4、提倡数据结构优于算法，组合优于封装、import优于继承的思想</p>
+                <p class="fragment">5、组件之间通过消息来实现通信</p>
+                <p class="fragment">6、基础组件、业务组件、业务组件组、组件化页面，提倡一切皆是组件的思想</p>
+                <p class="fragment">7、基于WebComponent的规范</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>前端框架技术选型</h2>
+                <p class="fragment">前端是什么</p>
+                <p class="fragment">"三化"建设</p>
+                <p class="fragment">选型比对</p>
+                <p class="fragment">Lego设计考虑</p>
+            </section>
+            <section>
+                <h3>前端是一种GUI软件</h3>
+                <img src="https://github.com/fouber/blog/raw/master/201508/assets/web_gui.png">
+            </section>
+            <section>
+                <img width="800" height="600" src="https://camo.githubusercontent.com/6797bdc1a11d35369611c817bbd5dae9a162d775/68747470733a2f2f7261772e6769746875622e636f6d2f4a61636b736f6e5469616e2f666b732f6d61737465722f666967757265732f666b732e6a7067">
+            </section>
+            <section>
+                <p class="fragment">前端自动化</p>
+                <p class="fragment">前端服务化</p>
+                <p class="fragment">前端'工程化'(工具化)</p>
+            </section>
+            <section>
+                <p class="fragment">基于构建用户界面的渐进式框架</p>
+                <p class="fragment">自底向上增量开发的设计</p>
+                <p class="fragment">完整生命周期钩子</p>
+                <p class="fragment">Web Component规范</p>
+                <p class="fragment">组件库的建设</p>
+                <p class="fragment">class增强编程体验</p>
+            </section>
+            <section>
+                <img src="images/lego-1.png">
+            </section>
+            <section>
+                <img src="images/lego-2.png">
+            </section>
+            <section>
+                <img src="images/lego-3.png">
+            </section>
+            <section>
+                <img src="images/lego-4.png">
+            </section>
+            <section>
+                <img src="images/lego-5.png">
+            </section>
+            <section>
+                <img width="800" height="600" src="http://178518.github.io/book/assets/lego/timeline.png">
+            </section>
+            <section>
+                <img width="800" height="600" src="http://178518.github.io/book/assets/lego/store.png">
+            </section>
+            <section>
+                <img width="800" height="600" src="http://178518.github.io/book/assets/lego/compare.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>Lego设计要素</h3>
+                <p class="fragment" style="font-size: 32px">1、开发规范</p>
+                <p class="fragment" style="font-size: 32px">2、模块化开发</p>
+                <p class="fragment" style="font-size: 32px">3、组件化开发</p>
+                <p class="fragment" style="font-size: 32px">4、组件仓库</p>
+                <p class="fragment" style="font-size: 32px">5、性能优化</p>
+                <p class="fragment" style="font-size: 32px">6、项目部署</p>
+                <p class="fragment" style="font-size: 32px">7、开发流程</p>
+                <p class="fragment" style="font-size: 32px">8、开发工具</p>
+                <p class="fragment" style="font-size: 32px">1-3是技术业务相关的开发需求，4是技术沉淀及共享需求，5-8是工程优化需求</p>
+            </section>
+            <section>
+                <h2>Lego前端技术架构</h2>
+                <p class="fragment">技术架构</p>
+                <p class="fragment">组件架构</p>
+                <p class="fragment">组件划分</p>
+                <p class="fragment">约定优于配置</p>
+                <p class="fragment">设计开发原则</p>
+            </section>
+            <section>
+                <h2>Lego框架实践方案</h2>
+                <p class="fragment">资源高内聚</p>
+                <p class="fragment">作用域独立</p>
+                <p class="fragment">自定义标签</p>
+                <p class="fragment">数据获取</p>
+                <p class="fragment">数据适配</p>
+                <p class="fragment">可插拔无指令污染</p>
+            </section>
+            <section>
+                <img width="800" height="600" src="http://178518.github.io/book/assets/lego/tech-jiagou.png">
+            </section>
+            <section>
+                <img width="800" height="600" src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/419b60ae49b1ac4ebdf8fb10084ca67b.png">
+            </section>
+            <section>
+                <img width="544" height="600" src="http://178518.github.io/book/assets/lego/tech-1.png">
+            </section>
+            <section>
+                <img width="800" height="600" src="http://178518.github.io/book/assets/lego/compontent-jiagou.png">
+            </section>
+            <section>
+                <img width="400" height="600" src="http://178518.github.io/book/assets/lego/fenceng.png">
+            </section>
+        </section>
+
+        <section>
+            <h2>Debug</h2>
+            <p class="fragment"><img width="1000" height="600" src="http://178518.github.io/book/assets/lego/vuedebug.png"></p>
+        </section>
+
+        <section>
+            <h1>Q&A</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>

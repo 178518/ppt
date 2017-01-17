@@ -56,101 +56,96 @@
 
         <section>
             <h2>目录</h2>
-            <p>面临现状</p>
-            <p class="fragment">VUE介绍</p>
-            <p class="fragment">组件化的几个阶段</p>
-            <p class="fragment">M站组件化</p>
+            <p class="fragment">组件化开发</p>
+            <p class="fragment">面临的现状</p>
+            <p class="fragment">怎么去解决</p>
+            <p class="fragment">遇到的问题</p>
         </section>
 
         <section>
             <section>
-                <h2>面临现状</h2>
-                <p class="fragment">业务推动UI不断变化,但是UI又遵循复用,扩充原则</p>
-                <p class="fragment">前端没有统一的数据模型,使得View层面的模板无法复用</p>
-                <p class="fragment">在协作配合的时候前端往往会成为资源瓶颈</p>
+                <h2>组件化开发的一些尝试</h2>
+                <p class="fragment">CSS/HTML 模块化(Boostrap)</p>
+                <p class="fragment">基于SeaJs/Require的 JS模块化</p>
+                <p class="fragment">基于MV*的模块化(AngularJS/React/VUE)</p>
             </section>
             <section>
-                <h2>试用一期/二期</h2>
-                <p class="fragment"><img width="500" height="500" data-src="images/one.png"></p>
+                <h2>我们做了哪些</h2>
+                <p class="fragment">基于复用原则,我们做了CSS的公共基础库</p>
+                <p class="fragment">基于SeaJS,我们做了JS的抒写规范,并实现了一套异步加载机制</p>
+                <p class="fragment">基于Adam我们实现了一套类OO的组件抒写规范</p>
+                <p class="fragment">基于Anita我们实现的数据和DOM的双向绑定,提供了一套指令</p>
             </section>
             <section>
-                <h2>试用一期/二期</h2>
-                <p class="fragment"><img width="400" height="600" data-src="images/two.png"></p>
+                <h2>使用模块(Tab插件)</h2>
+                <p class="fragment">引入Tab依赖的CSS</p>
+                <p class="fragment">引入Tab依赖的JS</p>
+                <p class="fragment">Copy组件所需要的HTML片断,为了解决数据和DOM之间的绑定关系,引入一些第三方指令</p>
+                <p class="fragment">执行一个init方法,已初始化组件</p>
             </section>
             <section>
-                <h2>协作模式(以前)</h2>
-                <p class="fragment"><img width="774" height="581" data-src="http://gtms02.alicdn.com/tps/i2/TB1wUREJXXXXXbBaXXXH3beFXXX-1024-768.jpg"></p>
-            </section>
-            <section>
-                <h2>协作模式(现在)</h2>
-                <p class="fragment"><img width="774" height="581" data-src="https://img.alicdn.com/tps/TB108X8JXXXXXa1XpXXXXXXXXXX-1024-768.jpg"></p>
+                <h2>使用过程中发现的一些问题</h2>
+                <p class="fragment">需要对组件的依赖比较清晰</p>
+                <p class="fragment">当组件的层次比较复杂,或者组件之间交互比较强的时候,钩子需要一步步传递</p>
+                <p class="fragment">组件嵌套使用的时候不是很方便,对于View层存在一定的入侵</p>
             </section>
         </section>
 
         <section>
             <section>
-                <h2>VUE介绍</h2>
-                <p class="fragment">生命周期</p>
+                <h2>面临的现状</h2>
+                <p class="fragment">需求与生产力的矛盾</p>
+                <p class="fragment">产品/原型/视觉和工作量评估的矛盾</p>
+                <p class="fragment">开发联调的矛盾</p>
+            </section>
+            <section>
+                <img width="650" height="650" src="images/store-home">
+            </section>
+            <section>
+                <img src="images/TB1wUREJXXXXXbBaXXXH3beFXXX-1024-768.jpg">
+            </section>
+            <section>
+                <img src="images/TB108X8JXXXXXa1XpXXXXXXXXXX-1024-768.jpg">
+            </section>
+            <section>
+                <img src="images/compare.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>我们怎么去解决</h2>
+                <p class="fragment">WebComponent</p>
+                <p class="fragment">分层结构</p>
                 <p class="fragment">组件通信</p>
-                <p class="fragment">组件系统</p>
             </section>
             <section>
-                <h2>生命周期</h2>
-                <p class="fragment"><img width="300" height="700" data-src="https://vuejs.org.cn/images/lifecycle.png"></p>
+                <img src="images/vue.png">
             </section>
             <section>
-                <h2>组件通信</h2>
-                <p class="fragment"><img width="700" height="600" data-src="images/tongxin.png"></p>
+                <img width="450" height="650" src="images/folder.png">
             </section>
             <section>
-                <h2>组件系统</h2>
-                <p class="fragment"><img width="652" height="213" data-src="http://img.ptcms.csdn.net/article/201508/11/55c9aaf6a71f0.jpg"></p>
-            </section>
-        </section>
-
-        <section>
-            <section>
-                <h2>组件化的几个阶段</h2>
-                <p class="fragment">组件化 1.0：资源重组</p>
-                <p class="fragment">组件化 2.0：趋于成熟</p>
-                <p class="fragment">组件化 3.0：重启征程</p>
+                <img width="800" height="600" src="images/webcompontent.png">
             </section>
             <section>
-                <h2>组件化 1.0：资源重组</h2>
-                <p class="fragment"><img data-src="images/legacy-flow.jpg"></p>
+                <img width="800" height="600" src="images/zucheng.png">
             </section>
             <section>
-                <h2>组件化 2.0：趋于成熟</h2>
-                <p class="fragment"><img data-src="images/component-flow.jpg"></p>
+                <img width="800" height="600" src="images/4.png">
             </section>
             <section>
-                <h2>组件化 3.0：重启征程</h2>
-                <p class="fragment"><img width="750" height="508" data-src="images/lego.jpg"></p>
-            </section>
-            <section>
-                <h2>组件化 3.0：重启征程</h2>
-                <p class="fragment"><img width="700" height="500" data-src="images/4.png"></p>
+                <img width="800" height="600" src="images/tongxin.png">
             </section>
         </section>
 
         <section>
             <section>
-                <h2>M站组件化</h2>
-                <p class="fragment">原子组件(容器/工具类/基础组件,复用度高)</p>
-                <p class="fragment">区块组件(中毒封装,复用在页面的某些区块,复用度中)</p>
-                <p class="fragment">业务组件(高度封装,只适合某一类场景,复用度低)</p>
-            </section>
-            <section>
-                <h2>原子组件</h2>
-                <p class="fragment"></p>
-            </section>
-            <section>
-                <h2>区块组件</h2>
-                <p class="fragment"></p>
-            </section>
-            <section>
-                <h2>业务组件</h2>
-                <p class="fragment"></p>
+                <h2>遇到的一些问题</h2>
+                <p class="fragment">未接入楼层的时候,数据需要从context手动输出</p>
+                <p class="fragment">页面直出问题还未解决</p>
+                <p class="fragment">可供使用的基础组件库还不是很完善</p>
+                <p class="fragment">依赖老的组件需要往全局对象挂载一次</p>
             </section>
         </section>
     </div>
