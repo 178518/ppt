@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Nuke 性能优化</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>Nuke 性能优化实践</h1>
+            <p>
+                <small>
+                    云易 / 178518@gmail.com
+                </small>
+                <br>
+                <small>
+                    2017-08-31
+                </small>
+            </p>
+        </section>
+
+        <section>
+            <h2>目录</h2>
+            <p class="fragment">为什么要做性能优化</p>
+            <p class="fragment">协议</p>
+            <p class="fragment">Weex&NetWork运行时</p>
+            <p class="fragment">虚拟Dom Diff算法</p>
+            <p class="fragment">Q&A</p>
+        </section>
+
+        <section>
+            <p class="fragment">
+                <img src="http://gw.alicdn.com/mt/TB1qr4.QpXXXXa9XXXXXXXXXXXX-280-280.png">
+            </p>
+        </section>
+
+        <section>
+            <p class="fragment">
+                <img src="https://gw.alicdn.com/tfs/TB1jRnCa.gQMeJjy0FfXXbddXXa-312-310.png">
+            </p>
+        </section>
+
+        <section>
+            <p class="fragment">
+                <img src="https://private-alipayobjects.alipay.com/alipay-rmsdeploy-image/skylark/png/25192/46666678c1ee91d3.png">
+            </p>
+        </section>
+
+        <section>
+            <section>
+                <p class="fragment">
+                    <img src="https://private-alipayobjects.alipay.com/alipay-rmsdeploy-image/skylark/png/25192/d4fa4190b620f361.png">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img width="675" height="669" src="http://7vijqo.com1.z0.glb.clouddn.com/HTTP2%20for%20a%20Faster%20Web_http1-vs-http2.png">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/1214fb65e4bf1cf3e3781b6a18ddce18">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/34edd57973c21d1ff00862d7309c55bf">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="https://gw.alicdn.com/tfs/TB1WIfma.gQMeJjy0FjXXaExFXa-1982-742.png">
+                </p>
+            </section>
+
+            <section>
+                <p class="fragment">
+                    <img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/04c3d15802511b11a0e5942a68b4d076">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="https://gw.alicdn.com/tfs/TB1b26la3MPMeJjy1XdXXasrXXa-1642-490.png">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://img1.tbcdn.cn/L1/461/1/02c5018ad40cda96fe7ca040d431ad44b5528323.png">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://7tszky.com1.z0.glb.clouddn.com/FpPDekdncL-A9N69NnI3-O8CgGQ8">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://7tszky.com1.z0.glb.clouddn.com/FstdKvSRRIbrFY2PqQRG59awgemj">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://ata2-img.cn-hangzhou.img-pub.aliyun-inc.com/f8702840c18b935102751698e2567747">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://gw.alicdn.com/mt/TB1.tCGOXXXXXa_aXXXXXXXXXXX-864-467.png">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://gw.alicdn.com/mt/TB1.S0wPVXXXXbHXpXXXXXXXXXX-600-273.png">
+                </p>
+            </section>
+            <section>
+                <p class="fragment">
+                    <img src="http://7xjtnb.com1.z0.glb.clouddn.com/ios_table-view-cell_contentView.jpg">
+                </p>
+            </section>
+        </section>
+
+        <section>
+            <h1>Q&A</h1>
+        </section>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
+</html>
